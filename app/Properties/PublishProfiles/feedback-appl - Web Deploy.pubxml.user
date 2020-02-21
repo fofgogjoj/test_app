@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACU2KhKkCKEKs2G4aiK3KZAAAAAACAAAAAAAQZgAAAAEAACAAAAAQxhgYWONcCoP4jo1SIXdESrNW+hnWGSM5jokcqISfygAAAAAOgAAAAAIAACAAAAB+thBnzEAjGW5OjKnMZntTGd7cL/9QLT8uJtYuc9VgZoAAAACkfcC1BQjW5Ho7/cIVquW7GSN2aGNiKAKW0Fz1xkbeXu1HE+N7H3kceXFoUFgdcBb1eqhBlFX2Cdfx6EUK6LmlbaNQlcZx4czUSID68hqnviUgTtUtNUBdYeEpQfWli9ChIP4aV08ppFWabDk+P9WD86afFV4OozTeUCnCAMg+DUAAAAB1Nu0NdStUzW2qnUTnYhSw1MuNEYcoRF9ySwZg8kqf+l4tIxGAX931O2Cs95NZNpIqQMPJyFF4WD3gzPNVX2a/</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DevConnection">
+      <Value>Data Source=tcp:feedback-appldbserver.database.windows.net,1433%3bInitial Catalog=feedbackDB%3bUser Id=fofgogjoj%40feedback-appldbserver%3bPassword=Gt523987cv</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
