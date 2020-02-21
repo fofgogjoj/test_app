@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+#asg {
+    background-color: #ECF0F1;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 #B3B6B7;
+  }
+  .ribbon{
+    font-size:14px;
+    position:relative;
+    display:inline-block;
+    margin-top: 1em;
+    margin-left: -2em;
+    color: #ECF0F1;
+  }
+  .text{
+
+    display:inline-block;
+    padding:0.5em 1em;
+    min-width:20em;
+    line-height:1.2em;
+    background: #A83F2A;
+    position:relative;
+  }
+  .ribbon:after,.ribbon:before,
+  .text:before,.text:after,
+  .bold:before{
+    content:'';
+    position:absolute;
+    border-style:solid;
+  }
+
+  .text:after{
+    top:100%; left:0;
+    border-width: .5em 0 0 1em;
+    border-color: #531907 transparent  transparent transparent;
+  }
+
+  .text:before{
+    top:100%; right:0;
+    border-width: .5em 0 0 1em;
+  }
+
+
+  .ribbon:after, .bold:before{
+    right:-4.3em;
+    border-width: 2.15em 2.15em 2.15em 2.15em;
+    border-color: #A83F2A transparent transparent #A83F2A;
+  }
+
+ .btn-block{
+  background: linear-gradient(to top, white 50%,  #D0D3D4   50%);
+  color: #B3B6B7 ; 
+  font-size: 14px;
+  padding: 4px 2px 2px 4px;
+  border: 2px solid gray;
+  }
+
+  input.ng-touched.ng-invalid,
+  textarea.ng-touched.ng-invalid,
+  select.ng-touched.ng-invalid{
+    border-color: #dc3545;
+}
+
+input.ng-valid,
+  textarea.ng-valid,
+  select.ng-valid{
+    border-color: #28a745;
+}
+
+
+input-group input.ng-touched.ng-invalid{
+  border-color: #dc3545;
+}
+
+
+input-group input.ng-valid{
+  border-color: #28a745;
+}

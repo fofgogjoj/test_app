@@ -1,0 +1,124 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" ng-show="showBlock">
+    <input type="hidden" name="ID" [(ngModel)]="service.formData.ID"> 
+    <p class="ribbon">
+        <span class="text"><h2>Напишите нам</h2></span>
+      </p>
+    <div class="form-row">
+    <label class="name font-weight-bold col-md-3" for="name">Ваше имя:</label>
+    <div class="form-group col-md-9">           
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-user form-control-feedback"></i>
+                </div>
+            </div>
+            <input name="Surname" #Surname="ngModel" [(ngModel)]="service.formData.Surname" class="form-control" required>
+        </div>   
+        <div [hidden]="Surname.valid || Surname.untouched" class="alert alert-danger">
+            Некорректное имя
+        </div>
+     </div>    
+    </div>
+    <div class="form-row">
+    <label class="name font-weight-bold col-md-3" for="name">Ваш Email:</label>
+    <div class="form-group col-md-9">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-envelope"></i>
+                </div>
+            </div>
+            <input name="Mail" #Mail="ngModel" [(ngModel)]="service.formData.Mail" class="form-control" required pattern="[a-zA-Z0-9_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}">         
+        </div>
+        <div [hidden]="Mail.valid || Mail.untouched" class="alert alert-danger">
+            Некорректный email
+        </div>
+    </div>
+</div>
+<div class="form-row">
+<label class="name font-weight-bold col-md-3" for="name">Ваш телефон:</label>
+    <div class="form-group col-md-9">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-mobile"></i>
+                </div>
+            </div>
+            <input name="PhoneNumber" #PhoneNumber="ngModel" [(ngModel)]="service.formData.PhoneNumber" class="form-control" [textMask]="{mask: mask, showMask: true}" pattern="\+7\s\(\d{3}\)\d{3}\-\d{4}" required>
+        </div>
+        <div [hidden]="PhoneNumber.valid || PhoneNumber.untouched" class="alert alert-danger">
+            Некорректный номер телефона
+        </div>
+    </div>
+</div>
+<div class="form-row">
+<label class="name font-weight-bold col-md-3" for="name">Тема:</label>
+    <div class="form-group col-md-9">
+        <div class="input-group">
+            <select name="Theme" class="form-control" #Theme="ngModel" [(ngModel)]="service.formData.Theme" required>
+                <option>Техподдержка</option>
+                <option>Продажи</option>
+                <option>Другое</option>
+                <option>Ещё один пункт</option>
+            </select>
+        </div>
+        <div [hidden]="Theme.valid || Theme.untouched" class="alert alert-danger">
+            Выберите тему
+        </div>
+    </div>
+</div>
+<div class="form-row">
+<label class="name font-weight-bold col-md-3" for="message">Ваше <br>сообщение:</label>
+    <div class="form-group col-md-9">
+        <div class="input-group">
+            <textarea class="form-control" rows="4" name="Message" #Message="ngModel"  [(ngModel)]="service.formData.Message" required></textarea>
+        </div>
+        <div [hidden]="Message.valid || Message.untouched" class="alert alert-danger">
+            Введите сообщение
+        </div>
+    </div>
+</div>
+<div class="form-row">
+    <label class="name font-weight-bold col-md-3" for="captcha">Цифры:</label>
+        <div class="form-group col-md-9">
+         <!--  <div class="input-group">
+               <input class="form-control" name="Captcha"  placeholder="Captcha" #Captcha="ngModel" [(ngModel)]="service.formData.Captcha" required>
+            </div>
+           <div [hidden]="Captcha.valid || Captcha.untouched" class="alert alert-danger">
+                Введите капчу
+            </div> --> 
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3"></div>
+    <div class="form-group col-md-4">
+        <button class="btn btn-succes btn-lg btn-block" type="submit" [disabled]="form.invalid" ng-click="showBlock = ! showBlock">Отправить письмо!</button>
+    </div>
+    </div>
+</form>
+<form #myForm="ngForm" autocomplete="off" (submit)="onSubmit(form)" ng-show="!showBlock">
+    <div class="form-row">
+        <label class="name font-weight-bold col-md-3" for="name">ID сообщения:</label>
+        <div class="form-group col-md-9">  
+                <div class="form-control">{{formMessage.ID}}</div>
+         </div>    
+        </div>
+        <div class="form-row">
+            <label class="name font-weight-bold col-md-3" for="name">Текст сообщения:</label>
+            <div class="form-group col-md-9">  
+                   <div class="form-control">{{formMessage.MessageText}}</div>
+             </div>    
+            </div>
+            <div class="form-row">
+                <label class="name font-weight-bold col-md-3" for="name">ID пользователя:</label>
+                <div class="form-group col-md-9">  
+                        <div class="form-control">{{formMessage.IdC}}</div>
+                 </div>    
+                </div>
+                <div class="form-row">
+                    <label class="name font-weight-bold col-md-3" for="name">ID темы:</label>
+                    <div class="form-group col-md-9">  
+                            <div class="form-control">{{formMessage.IdT}}</div>
+                     </div>    
+                    </div>
+    </form>
